@@ -8448,18 +8448,16 @@ module.exports = yeast;
 },{}],45:[function(require,module,exports){
 clientApi = {};
 
-(function () {
-    const socket = require('socket.io-client')();
+const socket = require('socket.io-client')();
 
-    clientApi.emit = (eventName, data) => {
-        socket.emit(eventName, data);
-    };
+clientApi.emit = (eventName, data) => {
+    socket.emit(eventName, data);
+};
 
-    socket.on('testRoom', (data) => {
-        console.log(data)
-    });
+socket.on('testRoom', (data) => {
+    console.log(data)
+});
 
-})();
 
 // setInterval(() => {
 //     clientApi.emit('testRoom', new Date());
